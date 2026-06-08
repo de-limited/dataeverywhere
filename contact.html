@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Everywhere Limited | Contact Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">DE</div>
+        <h1>Data <span>Everywhere</span></h1>
+      </a>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="technologies.html">Technologies</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="cta-button">Get Started</a>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="section">
+        <div class="section-title">
+          <h2>Contact Us</h2>
+          <p>Have questions or want to get in touch? We'd love to hear from you.</p>
+        </div>
+
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" placeholder="Enter your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="Enter your email" required />
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" placeholder="Enter your company name" />
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" placeholder="How can we help you?" required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Send Message</button>
+          </form>
+        </div>
+
+        <div class="services-grid" style="margin-top: 80px">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="service-content">
+              <h3>Visit Us</h3>
+              <p>123 Data Street<br />Tech City, TC 12345</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-phone"></i></div>
+            <div class="service-content">
+              <h3>Call Us</h3>
+              <p>+1 (555) 123-4567<br />Mon-Fri, 9am-5pm EST</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-envelope"></i></div>
+            <div class="service-content">
+              <h3>Email Us</h3>
+              <p>info@dataeverywhere.com<br />We respond within 24 hours</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Data Everywhere</h3>
+          <p>Enterprise-grade database integration and support services for businesses that demand reliability, security, and performance.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html">Database Integration</a></li>
+            <li><a href="services.html">Oracle GoldenGate</a></li>
+            <li><a href="services.html">Cloud Architecture</a></li>
+            <li><a href="services.html">Performance Optimization</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="technologies.html">Technologies</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Data Street, Tech City</p>
+          <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+          <p><i class="fas fa-envelope"></i> info@dataeverywhere.com</p>
+          <a href="contact.html" class="cta-button" style="margin-top: 15px; display: inline-block;">Get in Touch</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Data Everywhere Limited. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
