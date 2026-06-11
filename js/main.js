@@ -1,36 +1,3 @@
-// Custom Cursor
-const cursor = document.createElement('div');
-const cursorFollower = document.createElement('div');
-cursor.classList.add('cursor');
-cursorFollower.classList.add('cursor-follower');
-document.body.appendChild(cursor);
-document.body.appendChild(cursorFollower);
-
-document.addEventListener('mousemove', (e) => {
-  cursor.style.left = e.clientX - 4 + 'px';
-  cursor.style.top = e.clientY - 4 + 'px';
-  
-  setTimeout(() => {
-    cursorFollower.style.left = e.clientX - 15 + 'px';
-    cursorFollower.style.top = e.clientY - 15 + 'px';
-  }, 80);
-});
-
-// Hover effect on interactive elements
-const interactiveElements = document.querySelectorAll('a, button, .service-card, .tech-item');
-interactiveElements.forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    cursorFollower.style.width = '50px';
-    cursorFollower.style.height = '50px';
-    cursorFollower.style.borderColor = '#ff6b35';
-  });
-  el.addEventListener('mouseleave', () => {
-    cursorFollower.style.width = '30px';
-    cursorFollower.style.height = '30px';
-    cursorFollower.style.borderColor = '#00d4ff';
-  });
-});
-
 // Header scroll effect
 window.addEventListener('scroll', () => {
   const header = document.querySelector('header');
