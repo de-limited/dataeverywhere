@@ -45,6 +45,30 @@ document.querySelectorAll('.tech-item').forEach(item => {
   observer.observe(item);
 });
 
+// Observe tech detail cards
+document.querySelectorAll('.tech-detail-card').forEach(card => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateX(-20px)';
+  card.style.transition = 'all 0.5s ease';
+  observer.observe(card);
+});
+
+// Observe timeline steps
+document.querySelectorAll('.timeline-step').forEach(step => {
+  step.style.opacity = '0';
+  step.style.transform = 'translateY(20px)';
+  step.style.transition = 'all 0.5s ease';
+  observer.observe(step);
+});
+
+// Observe usecase cards
+document.querySelectorAll('.usecase-card').forEach(card => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(20px)';
+  card.style.transition = 'all 0.5s ease';
+  observer.observe(card);
+});
+
 // Counter animation for stats
 function animateCounter(element, target) {
   let current = 0;
@@ -77,48 +101,6 @@ const statObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.stat-card').forEach(stat => {
   statObserver.observe(stat);
 });
-
-// Testimonial slider
-function initTestimonialSlider() {
-  const testimonials = document.querySelectorAll('#testimonialSlider .testimonial');
-  const navContainer = document.getElementById('testimonialNav');
-  
-  if (testimonials.length && navContainer) {
-    navContainer.innerHTML = '';
-    
-    testimonials.forEach((_, i) => {
-      const dot = document.createElement('div');
-      dot.classList.add('nav-dot');
-      if (i === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => showTestimonial(i));
-      navContainer.appendChild(dot);
-    });
-    
-    let currentIdx = 0;
-    let autoSlideInterval;
-    
-    function showTestimonial(index) {
-      testimonials.forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.nav-dot').forEach(d => d.classList.remove('active'));
-      testimonials[index].classList.add('active');
-      document.querySelectorAll('.nav-dot')[index]?.classList.add('active');
-      currentIdx = index;
-      
-      // Reset auto-slide timer
-      clearInterval(autoSlideInterval);
-      startAutoSlide();
-    }
-    
-    function startAutoSlide() {
-      autoSlideInterval = setInterval(() => {
-        currentIdx = (currentIdx + 1) % testimonials.length;
-        showTestimonial(currentIdx);
-      }, 5000);
-    }
-    
-    startAutoSlide();
-  }
-}
 
 // Mobile menu toggle
 function toggleMenu() {
@@ -198,7 +180,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Glow effect on cards
-document.querySelectorAll('.service-card, .tech-item').forEach(card => {
+document.querySelectorAll('.service-card, .tech-item, .tech-detail-card').forEach(card => {
   card.addEventListener('mousemove', (e) => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -221,7 +203,6 @@ document.querySelectorAll('.service-card, .tech-item').forEach(card => {
 // Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
   setActiveNavLink();
-  initTestimonialSlider();
   initContactForm();
   
   // Add loading animation to body

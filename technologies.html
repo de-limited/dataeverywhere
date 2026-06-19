@@ -8,75 +8,105 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .tech-category {
+    .tech-block {
       background: var(--bg-card);
-      border-radius: 30px;
+      border-radius: 24px;
       padding: 40px;
-      margin-bottom: 40px;
-      box-shadow: var(--shadow-md);
-    }
-    .tech-category h3 {
-      font-size: 1.8rem;
-      color: var(--primary);
       margin-bottom: 30px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(15,23,42,0.06);
+    }
+    .tech-block-header {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 18px;
+      margin-bottom: 12px;
     }
-    .tech-category h3 i {
-      color: var(--secondary);
+    .tech-block-header .tb-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      background: var(--gradient-cyan);
+      color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
     }
-    .tech-list {
+    .tech-block-header h3 {
+      font-size: 1.6rem;
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .tech-block > p.tb-desc {
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .tech-detail-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
     }
-    .tech-list-item {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      padding: 15px;
+    .tech-detail-card {
       background: var(--bg-light);
       border-radius: 16px;
+      padding: 20px;
       transition: all 0.3s ease;
+      border-left: 3px solid var(--secondary);
     }
-    .tech-list-item:hover {
-      transform: translateX(10px);
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    .tech-detail-card:hover {
+      transform: translateX(6px);
+      background: linear-gradient(135deg, #ffffff, #f1f5f9);
     }
-    .tech-list-item:hover .tech-name {
-      color: white;
-    }
-    .tech-list-item .tech-icon {
-      width: 50px;
-      height: 50px;
-      background: var(--gradient-cyan);
-      border-radius: 12px;
+    .tech-detail-card .td-name {
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      margin: 0;
+      gap: 10px;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.05rem;
+      margin-bottom: 8px;
     }
-    .tech-list-item .tech-name {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      transition: color 0.3s ease;
+    .tech-detail-card .td-name i { color: var(--secondary); }
+    .tech-detail-card .td-desc {
+      color: var(--text-light);
+      font-size: 0.88rem;
+      line-height: 1.6;
     }
     .cert-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(0, 212, 255, 0.1);
-      padding: 8px 16px;
+      background: rgba(59, 130, 246, 0.08);
+      padding: 10px 18px;
       border-radius: 40px;
       margin: 5px;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
+      color: var(--primary);
+      font-weight: 600;
+      border: 1px solid rgba(59,130,246,0.18);
     }
-    .cert-badge i {
+    .cert-badge i { color: var(--success); }
+    .tech-highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .tech-highlight {
+      background: var(--bg-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .tech-highlight i {
+      font-size: 1.3rem;
       color: var(--secondary);
+    }
+    .tech-highlight span {
+      font-weight: 500;
+      color: var(--primary);
     }
   </style>
 </head>
@@ -84,9 +114,7 @@
   <header>
     <div class="container header-container">
       <a href="index.html" class="logo">
-        <div class="logo-icon">
-          <i class="fas fa-database"></i>
-        </div>
+        <div class="logo-icon"><i class="fas fa-database"></i></div>
         <h1>Data<span>Everywhere</span></h1>
       </a>
       <nav>
@@ -94,173 +122,170 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="technologies.html" class="active">Technologies</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <a href="contact.html" class="cta-button">Get Started</a>
-      <button class="mobile-menu-btn" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-      </button>
+      <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
     </div>
   </header>
 
-  <main>
-    <div class="container">
-      <div class="section">
-        <div class="section-title">
-          <h2>Our <span>Technology Stack</span></h2>
-          <div class="title-line"></div>
-          <p>We work with industry-leading technologies to deliver enterprise-grade solutions</p>
+  <main data-testid="page-technologies">
+    <section class="subpage-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a><span>/</span> Technologies</div>
+        <h1>The <span>stack</span> behind every engagement.</h1>
+        <p class="lead">We work with the database engines, cloud platforms, streaming and observability tools that power critical data infrastructure — and we hold the certifications to prove it.</p>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><i class="fas fa-medal"></i> 30+ active certifications</div>
+          <div class="hero-meta-item"><i class="fas fa-users"></i> 60+ engineers</div>
+          <div class="hero-meta-item"><i class="fas fa-globe"></i> 15+ years of practice</div>
         </div>
+      </div>
+    </section>
 
-        <!-- Database Technologies -->
-        <div class="tech-category">
-          <h3><i class="fas fa-database"></i> Database Technologies</h3>
-          <div class="tech-list">
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fas fa-database"></i></div>
-              <span class="tech-name">Oracle Database</span>
-            </div>
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fas fa-server"></i></div>
-              <span class="tech-name">Microsoft SQL Server</span>
-            </div>
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fab fa-aws"></i></div>
-              <span class="tech-name">PostgreSQL</span>
-            </div>
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fas fa-hdd"></i></div>
-              <span class="tech-name">MySQL</span>
-            </div>
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fas fa-leaf"></i></div>
-              <span class="tech-name">MongoDB</span>
-            </div>
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fas fa-cloud"></i></div>
-              <span class="tech-name">Amazon Aurora</span>
-            </div>
+    <section class="sub-section">
+      <div class="container">
+        <h2 class="sub-heading">Technology <span>excellence</span></h2>
+        <p class="sub-subheading">We don't just know these technologies — we've battle-tested them in production environments ranging from global banks to high-growth SaaS platforms.</p>
+
+        <!-- Database Engines -->
+        <div class="tech-block">
+          <div class="tech-block-header">
+            <div class="tb-icon"><i class="fas fa-database"></i></div>
+            <h3>Database Engines</h3>
+          </div>
+          <p class="tb-desc">Relational, NoSQL and in-memory — we have hands-on, production-grade experience tuning, replicating and migrating across the entire spectrum.</p>
+          <div class="tech-detail-grid">
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-database"></i> Oracle Database</div><div class="td-desc">11g, 12c, 19c, 21c and 23ai. RAC, ASM, Data Guard, Multitenant, Exadata, Autonomous DB.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-server"></i> Microsoft SQL Server</div><div class="td-desc">2012 → 2022, Always On AGs, Replication, Service Broker, In-Memory OLTP, Columnstore.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-elephant"></i> PostgreSQL</div><div class="td-desc">11 → 17, streaming replication, logical replication, pgBouncer, Citus, TimescaleDB, partitioning.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-dolphin"></i> MySQL / MariaDB</div><div class="td-desc">InnoDB tuning, Group Replication, ProxySQL, Galera cluster, MaxScale, point-in-time recovery.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-leaf"></i> MongoDB</div><div class="td-desc">Replica sets, sharded clusters, Atlas, schema modelling, change streams and aggregation pipelines.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-cloud"></i> Amazon Aurora</div><div class="td-desc">Aurora PostgreSQL & MySQL, global database, Babelfish, serverless v2, parallel query.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-bolt"></i> Redis</div><div class="td-desc">Cluster, Sentinel, Streams, Redis Stack and persistence tuning for hot-path caching.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-cube"></i> Snowflake</div><div class="td-desc">Warehouse sizing, micro-partitioning, secure data sharing, Snowpipe and dynamic tables.</div></div>
           </div>
         </div>
 
         <!-- Cloud Platforms -->
-        <div class="tech-category">
-          <h3><i class="fas fa-cloud"></i> Cloud Platforms</h3>
-          <div class="tech-list">
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fab fa-aws"></i></div>
-              <span class="tech-name">AWS</span>
-            </div>
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fab fa-microsoft"></i></div>
-              <span class="tech-name">Azure</span>
-            </div>
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fab fa-google"></i></div>
-              <span class="tech-name">Google Cloud</span>
-            </div>
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fas fa-building"></i></div>
-              <span class="tech-name">Oracle Cloud</span>
-            </div>
+        <div class="tech-block">
+          <div class="tech-block-header">
+            <div class="tb-icon"><i class="fas fa-cloud"></i></div>
+            <h3>Cloud Platforms</h3>
+          </div>
+          <p class="tb-desc">Multi-cloud by design. We architect for portability and run native services where they earn their keep.</p>
+          <div class="tech-detail-grid">
+            <div class="tech-detail-card"><div class="td-name"><i class="fab fa-aws"></i> Amazon Web Services</div><div class="td-desc">RDS, Aurora, DynamoDB, DMS, SCT, Redshift, Lake Formation, KMS, VPC and IAM patterns.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fab fa-microsoft"></i> Microsoft Azure</div><div class="td-desc">Azure SQL DB / Managed Instance, Cosmos DB, Synapse, Purview, Key Vault, Private Link.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fab fa-google"></i> Google Cloud</div><div class="td-desc">Cloud SQL, AlloyDB, Spanner, BigQuery, Dataflow, IAM and VPC Service Controls.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-building"></i> Oracle Cloud (OCI)</div><div class="td-desc">Autonomous Database, Exadata Cloud Service, GoldenGate Cloud, OCI networking and IAM.</div></div>
           </div>
         </div>
 
-        <!-- Integration Tools -->
-        <div class="tech-category">
-          <h3><i class="fas fa-sync"></i> Integration & Replication</h3>
-          <div class="tech-list">
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fas fa-sync"></i></div>
-              <span class="tech-name">Oracle GoldenGate</span>
-            </div>
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fas fa-code-branch"></i></div>
-              <span class="tech-name">Apache Kafka</span>
-            </div>
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fas fa-exchange-alt"></i></div>
-              <span class="tech-name">Fusion Middleware</span>
-            </div>
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fas fa-pipe"></i></div>
-              <span class="tech-name">Airbyte</span>
-            </div>
+        <!-- Integration & Replication -->
+        <div class="tech-block">
+          <div class="tech-block-header">
+            <div class="tb-icon"><i class="fas fa-sync"></i></div>
+            <h3>Integration & Replication</h3>
+          </div>
+          <p class="tb-desc">The pipes and plumbing that move data reliably between systems — from CDC streams to batch ETL.</p>
+          <div class="tech-detail-grid">
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-sync"></i> Oracle GoldenGate</div><div class="td-desc">Classic & Microservices Architecture, GG for Big Data, heterogeneous replication, active-active topologies.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-code-branch"></i> Apache Kafka</div><div class="td-desc">Kafka Connect, Schema Registry, ksqlDB, MSK, Confluent Cloud — production at scale.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-water"></i> Debezium</div><div class="td-desc">Open-source CDC for PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — Kafka-native.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-exchange-alt"></i> AWS DMS & SCT</div><div class="td-desc">Schema conversion and continuous migration from on-prem to RDS/Aurora with minimal downtime.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-pipe"></i> Airbyte / Fivetran</div><div class="td-desc">SaaS-to-warehouse ingestion with 300+ pre-built connectors and EL-then-T patterns.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-fire"></i> dbt</div><div class="td-desc">Modular SQL transformations, lineage, testing and documentation for the modern data stack.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-cogs"></i> Apache NiFi</div><div class="td-desc">Visual flow-based data routing, transformation and system mediation for complex integrations.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-stream"></i> Striim</div><div class="td-desc">Real-time streaming integration with built-in CDC, transformation and delivery to cloud targets.</div></div>
           </div>
         </div>
 
         <!-- DevOps & Monitoring -->
-        <div class="tech-category">
-          <h3><i class="fas fa-chart-line"></i> DevOps & Monitoring</h3>
-          <div class="tech-list">
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fab fa-docker"></i></div>
-              <span class="tech-name">Docker</span>
-            </div>
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fas fa-chart-line"></i></div>
-              <span class="tech-name">Prometheus</span>
-            </div>
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fas fa-tachometer-alt"></i></div>
-              <span class="tech-name">Grafana</span>
-            </div>
-            <div class="tech-list-item">
-              <div class="tech-icon"><i class="fab fa-git-alt"></i></div>
-              <span class="tech-name">GitLab CI/CD</span>
-            </div>
+        <div class="tech-block">
+          <div class="tech-block-header">
+            <div class="tb-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>DevOps, Observability & Automation</h3>
+          </div>
+          <p class="tb-desc">Modern data platforms need software-engineering discipline. We bring it.</p>
+          <div class="tech-detail-grid">
+            <div class="tech-detail-card"><div class="td-name"><i class="fab fa-docker"></i> Docker & Kubernetes</div><div class="td-desc">Containerised databases, operators (CloudNativePG, Crunchy, Percona) and Helm-based GitOps.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-cubes"></i> Terraform & Pulumi</div><div class="td-desc">Infrastructure-as-code for repeatable, auditable database and network provisioning.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-chart-line"></i> Prometheus & Grafana</div><div class="td-desc">Engine exporters, custom dashboards, alerting rules and SLO/SLI definitions.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-eye"></i> Datadog / New Relic</div><div class="td-desc">APM-correlated DB observability with deep query-level visibility and anomaly detection.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fab fa-git-alt"></i> GitLab / GitHub Actions</div><div class="td-desc">CI/CD pipelines for schema migrations, dbt builds and IaC apply workflows.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-shield-alt"></i> HashiCorp Vault</div><div class="td-desc">Dynamic credentials, encryption-as-a-service and secrets rotation for database access.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-stream"></i> OpenTelemetry</div><div class="td-desc">Vendor-neutral tracing and metrics to correlate app performance with database behaviour.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-tools"></i> Liquibase / Flyway</div><div class="td-desc">Version-controlled, environment-promotable schema migrations across all engines.</div></div>
+          </div>
+        </div>
+
+        <!-- Security & Governance -->
+        <div class="tech-block">
+          <div class="tech-block-header">
+            <div class="tb-icon"><i class="fas fa-user-shield"></i></div>
+            <h3>Security & Data Governance</h3>
+          </div>
+          <p class="tb-desc">Data is a liability before it's an asset. We make sure your platform is defensible.</p>
+          <div class="tech-detail-grid">
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-key"></i> TDE & Column Encryption</div><div class="td-desc">Engine-native encryption-at-rest with externally managed keys (KMS, Vault, HSM).</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-mask"></i> Data Masking & Tokenization</div><div class="td-desc">Static masking for lower environments and dynamic masking for production access.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-file-contract"></i> Lineage & Cataloging</div><div class="td-desc">DataHub, OpenMetadata, Purview, Collibra — provable lineage for audit and AI governance.</div></div>
+            <div class="tech-detail-card"><div class="td-name"><i class="fas fa-balance-scale"></i> Compliance Frameworks</div><div class="td-desc">GDPR, HIPAA, PCI-DSS, SOC 2, ISO 27001 — control mapping baked into architecture.</div></div>
           </div>
         </div>
 
         <!-- Certifications -->
-        <div class="tech-category">
-          <h3><i class="fas fa-certificate"></i> Our Certifications</h3>
+        <div class="tech-block">
+          <div class="tech-block-header">
+            <div class="tb-icon"><i class="fas fa-certificate"></i></div>
+            <h3>Certifications We Hold</h3>
+          </div>
+          <p class="tb-desc">Skills proven, not just claimed.</p>
           <div>
-            <span class="cert-badge"><i class="fas fa-check-circle"></i> Oracle Certified Professional</span>
-            <span class="cert-badge"><i class="fas fa-check-circle"></i> AWS Certified Database Specialist</span>
-            <span class="cert-badge"><i class="fas fa-check-circle"></i> Microsoft Certified: Azure Database Admin</span>
+            <span class="cert-badge"><i class="fas fa-check-circle"></i> Oracle Certified Master</span>
+            <span class="cert-badge"><i class="fas fa-check-circle"></i> Oracle Certified Professional (19c)</span>
+            <span class="cert-badge"><i class="fas fa-check-circle"></i> AWS Database Specialty</span>
+            <span class="cert-badge"><i class="fas fa-check-circle"></i> AWS Solutions Architect — Professional</span>
+            <span class="cert-badge"><i class="fas fa-check-circle"></i> Azure Database Administrator Associate</span>
+            <span class="cert-badge"><i class="fas fa-check-circle"></i> Azure Solutions Architect Expert</span>
             <span class="cert-badge"><i class="fas fa-check-circle"></i> Google Cloud Database Engineer</span>
-            <span class="cert-badge"><i class="fas fa-check-circle"></i> GoldenGate Certified Expert</span>
+            <span class="cert-badge"><i class="fas fa-check-circle"></i> GoldenGate Certified Implementation Specialist</span>
+            <span class="cert-badge"><i class="fas fa-check-circle"></i> MongoDB Certified DBA</span>
+            <span class="cert-badge"><i class="fas fa-check-circle"></i> Confluent Certified Developer for Kafka</span>
+            <span class="cert-badge"><i class="fas fa-check-circle"></i> CKAD / CKA (Kubernetes)</span>
+            <span class="cert-badge"><i class="fas fa-check-circle"></i> HashiCorp Terraform Associate</span>
           </div>
         </div>
 
-        <!-- Expertise Section -->
-        <div class="section-title" style="margin-top: 60px">
-          <h2>Our <span>Expertise</span></h2>
-          <div class="title-line"></div>
-          <p>Deep knowledge across the entire data ecosystem</p>
+        <!-- Why Choose Us -->
+        <div class="tech-block">
+          <div class="tech-block-header">
+            <div class="tb-icon"><i class="fas fa-star"></i></div>
+            <h3>Why Choose Our Technology Expertise</h3>
+          </div>
+          <p class="tb-desc">We bring more than just tool knowledge — we bring battle-tested patterns, production discipline, and a commitment to open standards.</p>
+          <div class="tech-highlight-grid">
+            <div class="tech-highlight"><i class="fas fa-check-circle"></i><span>Multi-cloud certified across AWS, Azure, GCP, OCI</span></div>
+            <div class="tech-highlight"><i class="fas fa-check-circle"></i><span>30+ active vendor certifications</span></div>
+            <div class="tech-highlight"><i class="fas fa-check-circle"></i><span>15+ years of production experience</span></div>
+            <div class="tech-highlight"><i class="fas fa-check-circle"></i><span>Open-source & vendor-neutral approach</span></div>
+            <div class="tech-highlight"><i class="fas fa-check-circle"></i><span>60+ dedicated database engineers</span></div>
+            <div class="tech-highlight"><i class="fas fa-check-circle"></i><span>24/7 global support coverage</span></div>
+          </div>
         </div>
 
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-content">
-              <h3>Database Management</h3>
-              <p>Full lifecycle management of enterprise database systems including installation, configuration, patching, and upgrades.</p>
-            </div>
-          </div>
-          <div class="service-card">
-            <div class="service-content">
-              <h3>Data Migration</h3>
-              <p>Seamless migration between database platforms with zero data loss and minimal downtime.</p>
-            </div>
-          </div>
-          <div class="service-card">
-            <div class="service-content">
-              <h3>High Availability</h3>
-              <p>Implementation of clustering, replication, and disaster recovery solutions for mission-critical systems.</p>
-            </div>
-          </div>
-          <div class="service-card">
-            <div class="service-content">
-              <h3>Security & Compliance</h3>
-              <p>Database hardening, encryption, access controls, and compliance with industry regulations.</p>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Have a stack we haven't listed?</h2>
+        <p>We've probably worked on it. Tell us what you run — we'll match you with the right engineer.</p>
+        <a href="contact.html" class="cta-button" data-testid="tech-cta-talk">Talk to a Specialist <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -279,10 +304,10 @@
         <div class="footer-column">
           <h3>Services</h3>
           <ul class="footer-links">
-            <li><a href="services.html">Database Integration</a></li>
-            <li><a href="services.html">Oracle GoldenGate</a></li>
-            <li><a href="services.html">Cloud Architecture</a></li>
-            <li><a href="services.html">Performance Optimization</a></li>
+            <li><a href="database-integration.html">Database Integration</a></li>
+            <li><a href="oracle-goldengate.html">Oracle GoldenGate</a></li>
+            <li><a href="cloud-migration.html">Cloud Architecture</a></li>
+            <li><a href="performance-optimization.html">Performance Optimization</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -291,7 +316,6 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="technologies.html">Technologies</a></li>
-            <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>

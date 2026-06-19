@@ -7,6 +7,73 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .trust-badge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .trust-badge {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .trust-badge i {
+      font-size: 2rem;
+      color: var(--accent-light);
+      margin-bottom: 10px;
+    }
+    .trust-badge h4 {
+      color: white;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .trust-badge p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8rem;
+    }
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .approach-card {
+      background: var(--bg-card);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--secondary);
+      transition: all 0.3s ease;
+    }
+    .approach-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+    .approach-card .step-num {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--secondary);
+      opacity: 0.2;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    .approach-card h4 {
+      color: var(--primary);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .approach-card p {
+      color: var(--text-light);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -22,11 +89,10 @@
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="technologies.html">Technologies</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <a href="contact.html" class="cta-button">Get Started</a>
+      <a href="contact.html" class="cta-button" data-testid="header-get-started-btn">Get Started</a>
       <button class="mobile-menu-btn" onclick="toggleMenu()">
         <i class="fas fa-bars"></i>
       </button>
@@ -40,8 +106,30 @@
           <h2>Seamless <span>Integration.</span><br />Limitless <span>Possibilities.</span></h2>
           <p>Experts in Oracle, SQL Server, PostgreSQL, and real-time data pipelines. Enterprise-grade database solutions tailored to your business needs.</p>
           <div class="hero-buttons">
-            <a href="services.html" class="cta-button">Explore Services <i class="fas fa-arrow-right"></i></a>
-            <a href="contact.html" class="secondary-button">Contact Us <i class="fas fa-headset"></i></a>
+            <a href="services.html" class="cta-button" data-testid="hero-explore-services-btn">Explore Services <i class="fas fa-arrow-right"></i></a>
+            <a href="contact.html" class="secondary-button" data-testid="hero-contact-btn">Contact Us <i class="fas fa-headset"></i></a>
+          </div>
+          <div class="trust-badge-grid">
+            <div class="trust-badge">
+              <i class="fas fa-shield-alt"></i>
+              <h4>ISO 27001</h4>
+              <p>Certified Security</p>
+            </div>
+            <div class="trust-badge">
+              <i class="fas fa-certificate"></i>
+              <h4>30+ Certifications</h4>
+              <p>Oracle, AWS, Azure, GCP</p>
+            </div>
+            <div class="trust-badge">
+              <i class="fas fa-clock"></i>
+              <h4>24/7 Support</h4>
+              <p>SLA-backed Engineering</p>
+            </div>
+            <div class="trust-badge">
+              <i class="fas fa-globe"></i>
+              <h4>Global Reach</h4>
+              <p>Multi-region Deployments</p>
+            </div>
           </div>
         </div>
       </div>
@@ -69,38 +157,119 @@
           <p>Comprehensive database solutions to power your enterprise infrastructure</p>
         </div>
         <div class="services-grid">
-          <div class="service-card">
+          <div class="service-card" data-testid="service-card-database-integration">
             <div class="service-icon"><i class="fas fa-database"></i></div>
             <div class="service-content">
               <h3>Database Integration</h3>
               <p>Seamless integration of Oracle, SQL Server, PostgreSQL, and MySQL across your enterprise ecosystem.</p>
-              <a href="services.html" class="secondary-button-dark">Learn More →</a>
+              <a href="database-integration.html" class="secondary-button-dark">Learn More →</a>
             </div>
           </div>
-          <div class="service-card">
+          <div class="service-card" data-testid="service-card-goldengate">
             <div class="service-icon"><i class="fas fa-sync-alt"></i></div>
             <div class="service-content">
               <h3>GoldenGate Support</h3>
               <p>Expert implementation and management of Oracle GoldenGate for real-time data replication.</p>
-              <a href="services.html" class="secondary-button-dark">Learn More →</a>
+              <a href="oracle-goldengate.html" class="secondary-button-dark">Learn More →</a>
             </div>
           </div>
-          <div class="service-card">
+          <div class="service-card" data-testid="service-card-cloud-migration">
             <div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
             <div class="service-content">
               <h3>Cloud Migration</h3>
               <p>Seamless migration to cloud platforms with zero downtime and maximum security.</p>
-              <a href="services.html" class="secondary-button-dark">Learn More →</a>
+              <a href="cloud-migration.html" class="secondary-button-dark">Learn More →</a>
             </div>
           </div>
-          <div class="service-card">
+          <div class="service-card" data-testid="service-card-performance">
             <div class="service-icon"><i class="fas fa-chart-line"></i></div>
             <div class="service-content">
               <h3>Performance Optimization</h3>
               <p>High-performance data architecture consulting to maximize database efficiency.</p>
-              <a href="services.html" class="secondary-button-dark">Learn More →</a>
+              <a href="performance-optimization.html" class="secondary-button-dark">Learn More →</a>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our <span>Approach</span></h2>
+          <div class="title-line"></div>
+          <p>A proven methodology that delivers results, every time</p>
+        </div>
+        <div class="approach-grid">
+          <div class="approach-card">
+            <div class="step-num">01</div>
+            <h4>Discovery & Assessment</h4>
+            <p>We start by understanding your current infrastructure, pain points, and business goals. Comprehensive audit of your data estate.</p>
+          </div>
+          <div class="approach-card">
+            <div class="step-num">02</div>
+            <h4>Strategy & Design</h4>
+            <p>Tailored architecture and engagement plan with clear KPIs, milestones, and measurable outcomes for your data platform.</p>
+          </div>
+          <div class="approach-card">
+            <div class="step-num">03</div>
+            <h4>Implementation & Migration</h4>
+            <p>Phased, low-risk delivery with daily standups, stakeholder visibility, and zero-downtime cutover strategies.</p>
+          </div>
+          <div class="approach-card">
+            <div class="step-num">04</div>
+            <h4>Optimization & Support</h4>
+            <p>Continuous monitoring, performance tuning, and 24/7 SLA-backed engineering support to keep your systems running.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Technologies We <span>Master</span></h2>
+          <div class="title-line"></div>
+          <p>Deep expertise across the full database and data integration stack</p>
+        </div>
+        <div class="tech-stack">
+          <div class="tech-grid">
+            <div class="tech-item">
+              <div class="tech-icon"><i class="fas fa-database"></i></div>
+              <span class="tech-name">Oracle</span>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon"><i class="fas fa-server"></i></div>
+              <span class="tech-name">SQL Server</span>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon"><i class="fas fa-elephant"></i></div>
+              <span class="tech-name">PostgreSQL</span>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon"><i class="fas fa-dolphin"></i></div>
+              <span class="tech-name">MySQL</span>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon"><i class="fas fa-leaf"></i></div>
+              <span class="tech-name">MongoDB</span>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon"><i class="fas fa-cloud"></i></div>
+              <span class="tech-name">AWS</span>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon"><i class="fab fa-microsoft"></i></div>
+              <span class="tech-name">Azure</span>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon"><i class="fab fa-google"></i></div>
+              <span class="tech-name">GCP</span>
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="technologies.html" class="cta-button">View All Technologies <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
@@ -109,7 +278,7 @@
       <div class="container">
         <h2>Ready to Transform Your Data Infrastructure?</h2>
         <p>Join 500+ enterprises that trust us with their most critical data systems</p>
-        <a href="contact.html" class="cta-button">Schedule a Consultation <i class="fas fa-calendar-alt"></i></a>
+        <a href="contact.html" class="cta-button" data-testid="cta-schedule-consultation-btn">Schedule a Consultation <i class="fas fa-calendar-alt"></i></a>
       </div>
     </section>
   </main>
@@ -130,10 +299,10 @@
         <div class="footer-column">
           <h3>Services</h3>
           <ul class="footer-links">
-            <li><a href="services.html">Database Integration</a></li>
-            <li><a href="services.html">Oracle GoldenGate</a></li>
-            <li><a href="services.html">Cloud Architecture</a></li>
-            <li><a href="services.html">Performance Optimization</a></li>
+            <li><a href="database-integration.html">Database Integration</a></li>
+            <li><a href="oracle-goldengate.html">Oracle GoldenGate</a></li>
+            <li><a href="cloud-migration.html">Cloud Architecture</a></li>
+            <li><a href="performance-optimization.html">Performance Optimization</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -142,7 +311,6 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="technologies.html">Technologies</a></li>
-            <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
