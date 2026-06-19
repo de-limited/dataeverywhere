@@ -3,42 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Everywhere Limited | Contact Us</title>
+  <title>Contact Us | Data Everywhere Limited</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent-light); }
+  </style>
 </head>
 <body>
   <header>
     <div class="container header-container">
       <a href="index.html" class="logo">
-        <div class="logo-icon">DE</div>
-        <h1>Data <span>Everywhere</span></h1>
+        <div class="logo-icon"><i class="fas fa-database"></i></div>
+        <h1>Data<span>Everywhere</span></h1>
       </a>
       <nav>
         <ul id="nav-menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="technologies.html">Technologies</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
           <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
       </nav>
       <a href="contact.html" class="cta-button">Get Started</a>
-      <button class="mobile-menu-btn" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-      </button>
+      <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
     </div>
   </header>
 
   <main>
-    <div class="container">
-      <div class="section">
-        <div class="section-title">
-          <h2>Contact Us</h2>
-          <p>Have questions or want to get in touch? We'd love to hear from you.</p>
+    <section class="subpage-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a><span>/</span> Contact</div>
+        <h1>Let's <span>talk</span> about your data.</h1>
+        <p class="lead">Whether you need a quick health check, a full-scale migration, or ongoing support — we're here to help.</p>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><i class="fas fa-clock"></i> Response within 24 hours</div>
+          <div class="hero-meta-item"><i class="fas fa-headset"></i> Engineering-led conversations</div>
         </div>
+      </div>
+    </section>
 
+    <section class="sub-section">
+      <div class="container">
         <div class="contact-form">
           <form id="contactForm">
             <div class="form-group">
@@ -55,9 +63,9 @@
             </div>
             <div class="form-group">
               <label for="message">Your Message</label>
-              <textarea id="message" placeholder="How can we help you?" required></textarea>
+              <textarea id="message" placeholder="Tell us about your data challenges" required></textarea>
             </div>
-            <button type="submit" class="cta-button">Send Message</button>
+            <button type="submit" class="cta-button">Send Message <i class="fas fa-paper-plane"></i></button>
           </form>
         </div>
 
@@ -80,12 +88,12 @@
             <div class="service-icon"><i class="fas fa-envelope"></i></div>
             <div class="service-content">
               <h3>Email Us</h3>
-              <p>info@dataeverywhere.com<br />We respond within 24 hours</p>
+              <p>bigdataeverywhere@yahoo.com<br />We respond within 24 hours</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer>
@@ -98,15 +106,16 @@
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
         <div class="footer-column">
           <h3>Services</h3>
           <ul class="footer-links">
-            <li><a href="services.html">Database Integration</a></li>
-            <li><a href="services.html">Oracle GoldenGate</a></li>
-            <li><a href="services.html">Cloud Architecture</a></li>
-            <li><a href="services.html">Performance Optimization</a></li>
+            <li><a href="database-integration.html">Database Integration</a></li>
+            <li><a href="oracle-goldengate.html">Oracle GoldenGate</a></li>
+            <li><a href="cloud-migration.html">Cloud Architecture</a></li>
+            <li><a href="performance-optimization.html">Performance Optimization</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -115,12 +124,11 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="technologies.html">Technologies</a></li>
-            <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-column">
-          <h3>Contact Us</h3>
+          <h3>Contact Info</h3>
           <p><i class="fas fa-map-marker-alt"></i> 123 Data Street, Tech City</p>
           <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
           <p><i class="fas fa-envelope"></i> bigdataeverywhere@yahoo.com</p>
@@ -128,7 +136,7 @@
         </div>
       </div>
       <div class="copyright">
-        <p>&copy; 2025 Data Everywhere Limited. All rights reserved.</p>
+        <p>&copy; 2025 Data Everywhere Limited. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: #ff6b35;"></i> for enterprise excellence</p>
       </div>
     </div>
   </footer>

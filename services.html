@@ -18,6 +18,22 @@
       display: flex;
       flex-direction: column;
       height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-overview-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-cyan);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    .service-overview-card:hover::before {
+      transform: scaleX(1);
     }
     .service-overview-card:hover {
       transform: translateY(-8px);
@@ -25,11 +41,14 @@
       border-color: var(--secondary);
     }
     .service-overview-card .so-icon {
-      width: 64px; height: 64px;
+      width: 64px;
+      height: 64px;
       border-radius: 16px;
       background: var(--gradient-cyan);
       color: white;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1.6rem;
       margin-bottom: 22px;
       flex-shrink: 0;
@@ -80,6 +99,12 @@
       padding: 24px;
       text-align: center;
       box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      border-bottom: 4px solid var(--secondary);
+    }
+    .outcome-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
     }
     .outcome-item .num {
       font-size: 2.2rem;
@@ -91,6 +116,18 @@
       color: var(--text-light);
       font-size: 0.9rem;
       margin-top: 6px;
+    }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent-light); }
+    .service-cta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .service-cta-grid a {
+      text-align: center;
+      padding: 14px 20px;
     }
   </style>
 </head>
@@ -183,7 +220,7 @@
           </div>
         </div>
 
-        <div style="margin-top: 50px;">
+        <div style="margin-top: 60px;">
           <h2 class="sub-heading" style="text-align: center;">What our services <span>deliver</span></h2>
           <div class="outcome-grid">
             <div class="outcome-item"><div class="num">99.99%</div><div class="label">Uptime achieved</div></div>
@@ -211,6 +248,7 @@
     <section class="sub-section">
       <div class="container">
         <h2 class="sub-heading">Service <span>comparison</span></h2>
+        <p class="sub-subheading">See how our services compare across key capabilities.</p>
         <div style="overflow-x: auto;">
           <table style="width:100%; border-collapse: collapse; background: var(--bg-card); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);">
             <thead>
@@ -225,41 +263,78 @@
             <tbody>
               <tr style="border-bottom: 1px solid #e2e8f0;">
                 <td style="padding: 14px 20px; font-weight: 600;">Real-time Replication</td>
-                <td style="padding: 14px 20px; text-align: center;">✅</td>
-                <td style="padding: 14px 20px; text-align: center;">✅✅</td>
-                <td style="padding: 14px 20px; text-align: center;">✅</td>
-                <td style="padding: 14px 20px; text-align: center;">—</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: #94a3b8;">—</td>
               </tr>
               <tr style="border-bottom: 1px solid #e2e8f0;">
                 <td style="padding: 14px 20px; font-weight: 600;">Zero-Downtime Migration</td>
-                <td style="padding: 14px 20px; text-align: center;">✅</td>
-                <td style="padding: 14px 20px; text-align: center;">✅</td>
-                <td style="padding: 14px 20px; text-align: center;">✅✅</td>
-                <td style="padding: 14px 20px; text-align: center;">—</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: #94a3b8;">—</td>
               </tr>
               <tr style="border-bottom: 1px solid #e2e8f0;">
                 <td style="padding: 14px 20px; font-weight: 600;">Query Tuning</td>
-                <td style="padding: 14px 20px; text-align: center;">—</td>
-                <td style="padding: 14px 20px; text-align: center;">—</td>
-                <td style="padding: 14px 20px; text-align: center;">—</td>
-                <td style="padding: 14px 20px; text-align: center;">✅✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: #94a3b8;">—</td>
+                <td style="padding: 14px 20px; text-align: center; color: #94a3b8;">—</td>
+                <td style="padding: 14px 20px; text-align: center; color: #94a3b8;">—</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅✅</td>
               </tr>
               <tr style="border-bottom: 1px solid #e2e8f0;">
                 <td style="padding: 14px 20px; font-weight: 600;">Multi-Cloud Architecture</td>
-                <td style="padding: 14px 20px; text-align: center;">✅</td>
-                <td style="padding: 14px 20px; text-align: center;">✅</td>
-                <td style="padding: 14px 20px; text-align: center;">✅✅</td>
-                <td style="padding: 14px 20px; text-align: center;">—</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: #94a3b8;">—</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 14px 20px; font-weight: 600;">Data Governance</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: #94a3b8;">—</td>
               </tr>
               <tr>
                 <td style="padding: 14px 20px; font-weight: 600;">24/7 Support</td>
-                <td style="padding: 14px 20px; text-align: center;">✅</td>
-                <td style="padding: 14px 20px; text-align: center;">✅✅</td>
-                <td style="padding: 14px 20px; text-align: center;">✅</td>
-                <td style="padding: 14px 20px; text-align: center;">✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅</td>
+                <td style="padding: 14px 20px; text-align: center; color: var(--success);">✅</td>
               </tr>
             </tbody>
           </table>
+        </div>
+        <p style="text-align: center; margin-top: 16px; color: var(--text-light); font-size: 0.9rem;">
+          <span style="color: var(--success);">✅</span> Available &nbsp;|&nbsp; 
+          <span style="color: var(--success);">✅✅</span> Specialized Focus &nbsp;|&nbsp; 
+          <span style="color: #94a3b8;">—</span> Not Applicable
+        </p>
+      </div>
+    </section>
+
+    <section class="sub-section alt">
+      <div class="container">
+        <h2 class="sub-heading">Need multiple <span>services?</span></h2>
+        <p class="sub-subheading">Many clients engage us across multiple service areas. We offer integrated programs that combine integration, migration, and optimization for comprehensive outcomes.</p>
+        <div class="service-cta-grid">
+          <a href="contact.html" class="cta-button">Full Data Platform Review</a>
+          <a href="contact.html" class="cta-button" style="background: var(--gradient-cyan);">Multi-Service Program</a>
+          <a href="contact.html" class="cta-button" style="background: var(--gradient-accent);">Ask about Bundled Pricing</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section">
+      <div class="container">
+        <h2 class="sub-heading">Frequently <span>asked questions</span></h2>
+        <div class="faq-list">
+          <details class="faq-item"><summary>How do I know which service I need?</summary><p>Book a free 30-minute architecture call with our team. We'll review your current challenges and recommend the right engagement path — no pressure, just honest advice.</p></details>
+          <details class="faq-item"><summary>Can you combine multiple services?</summary><p>Yes! Most of our clients engage us across 2-3 service areas. For example, a cloud migration often includes performance optimization and GoldenGate replication for zero-downtime cutover.</p></details>
+          <details class="faq-item"><summary>Do you offer fixed-price engagements?</summary><p>Yes, for well-scoped work like health checks, specific migrations, or GoldenGate implementations. For larger programs, we offer time-and-materials with clear budget guardrails.</p></details>
+          <details class="faq-item"><summary>What's your typical engagement duration?</summary><p>Health checks: 2-4 weeks. Point-to-point integrations: 4-8 weeks. Enterprise-wide programs: 3-6 months with ongoing support optional.</p></details>
+          <details class="faq-item"><summary>Do you offer ongoing support?</summary><p>Yes — we offer 24/7 support retainers, monthly check-ins, and continuous optimization services for clients who want to keep us close.</p></details>
         </div>
       </div>
     </section>

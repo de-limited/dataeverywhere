@@ -15,6 +15,10 @@
       margin-bottom: 30px;
       box-shadow: var(--shadow-sm);
       border: 1px solid rgba(15,23,42,0.06);
+      transition: all 0.3s ease;
+    }
+    .tech-block:hover {
+      box-shadow: var(--shadow-md);
     }
     .tech-block-header {
       display: flex;
@@ -23,11 +27,14 @@
       margin-bottom: 12px;
     }
     .tech-block-header .tb-icon {
-      width: 56px; height: 56px;
+      width: 56px;
+      height: 56px;
       border-radius: 14px;
       background: var(--gradient-cyan);
       color: white;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1.5rem;
       flex-shrink: 0;
     }
@@ -52,10 +59,12 @@
       padding: 20px;
       transition: all 0.3s ease;
       border-left: 3px solid var(--secondary);
+      cursor: pointer;
     }
     .tech-detail-card:hover {
       transform: translateX(6px);
       background: linear-gradient(135deg, #ffffff, #f1f5f9);
+      box-shadow: var(--shadow-sm);
     }
     .tech-detail-card .td-name {
       display: flex;
@@ -84,8 +93,15 @@
       color: var(--primary);
       font-weight: 600;
       border: 1px solid rgba(59,130,246,0.18);
+      transition: all 0.3s ease;
+    }
+    .cert-badge:hover {
+      background: var(--secondary);
+      color: white;
+      transform: translateY(-2px);
     }
     .cert-badge i { color: var(--success); }
+    .cert-badge:hover i { color: white; }
     .tech-highlight-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -99,15 +115,39 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      transition: all 0.3s ease;
+    }
+    .tech-highlight:hover {
+      background: var(--secondary);
+      color: white;
+      transform: translateX(4px);
+    }
+    .tech-highlight:hover i,
+    .tech-highlight:hover span {
+      color: white;
     }
     .tech-highlight i {
       font-size: 1.3rem;
       color: var(--secondary);
+      transition: color 0.3s ease;
     }
     .tech-highlight span {
       font-weight: 500;
       color: var(--primary);
+      transition: color 0.3s ease;
     }
+    .tech-category-tag {
+      display: inline-block;
+      background: var(--gradient-cyan);
+      color: white;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent-light); }
   </style>
 </head>
 <body>
@@ -155,7 +195,8 @@
             <div class="tb-icon"><i class="fas fa-database"></i></div>
             <h3>Database Engines</h3>
           </div>
-          <p class="tb-desc">Relational, NoSQL and in-memory — we have hands-on, production-grade experience tuning, replicating and migrating across the entire spectrum.</p>
+          <span class="tech-category-tag">Core Expertise</span>
+          <p class="tb-desc">Relational, NoSQL and in-memory — we have hands-on, production-grade experience tuning, replicating and migrating across the entire spectrum. <a href="database-integration.html" style="color: var(--secondary); font-weight: 600;">Learn how we integrate these →</a></p>
           <div class="tech-detail-grid">
             <div class="tech-detail-card"><div class="td-name"><i class="fas fa-database"></i> Oracle Database</div><div class="td-desc">11g, 12c, 19c, 21c and 23ai. RAC, ASM, Data Guard, Multitenant, Exadata, Autonomous DB.</div></div>
             <div class="tech-detail-card"><div class="td-name"><i class="fas fa-server"></i> Microsoft SQL Server</div><div class="td-desc">2012 → 2022, Always On AGs, Replication, Service Broker, In-Memory OLTP, Columnstore.</div></div>
@@ -174,7 +215,8 @@
             <div class="tb-icon"><i class="fas fa-cloud"></i></div>
             <h3>Cloud Platforms</h3>
           </div>
-          <p class="tb-desc">Multi-cloud by design. We architect for portability and run native services where they earn their keep.</p>
+          <span class="tech-category-tag">Multi-Cloud Certified</span>
+          <p class="tb-desc">Multi-cloud by design. We architect for portability and run native services where they earn their keep. <a href="cloud-migration.html" style="color: var(--secondary); font-weight: 600;">See our migration approach →</a></p>
           <div class="tech-detail-grid">
             <div class="tech-detail-card"><div class="td-name"><i class="fab fa-aws"></i> Amazon Web Services</div><div class="td-desc">RDS, Aurora, DynamoDB, DMS, SCT, Redshift, Lake Formation, KMS, VPC and IAM patterns.</div></div>
             <div class="tech-detail-card"><div class="td-name"><i class="fab fa-microsoft"></i> Microsoft Azure</div><div class="td-desc">Azure SQL DB / Managed Instance, Cosmos DB, Synapse, Purview, Key Vault, Private Link.</div></div>
@@ -189,7 +231,8 @@
             <div class="tb-icon"><i class="fas fa-sync"></i></div>
             <h3>Integration & Replication</h3>
           </div>
-          <p class="tb-desc">The pipes and plumbing that move data reliably between systems — from CDC streams to batch ETL.</p>
+          <span class="tech-category-tag">Real-Time Data Movement</span>
+          <p class="tb-desc">The pipes and plumbing that move data reliably between systems — from CDC streams to batch ETL. <a href="oracle-goldengate.html" style="color: var(--secondary); font-weight: 600;">Explore GoldenGate support →</a></p>
           <div class="tech-detail-grid">
             <div class="tech-detail-card"><div class="td-name"><i class="fas fa-sync"></i> Oracle GoldenGate</div><div class="td-desc">Classic & Microservices Architecture, GG for Big Data, heterogeneous replication, active-active topologies.</div></div>
             <div class="tech-detail-card"><div class="td-name"><i class="fas fa-code-branch"></i> Apache Kafka</div><div class="td-desc">Kafka Connect, Schema Registry, ksqlDB, MSK, Confluent Cloud — production at scale.</div></div>
@@ -208,7 +251,8 @@
             <div class="tb-icon"><i class="fas fa-chart-line"></i></div>
             <h3>DevOps, Observability & Automation</h3>
           </div>
-          <p class="tb-desc">Modern data platforms need software-engineering discipline. We bring it.</p>
+          <span class="tech-category-tag">Platform Engineering</span>
+          <p class="tb-desc">Modern data platforms need software-engineering discipline. We bring it. <a href="performance-optimization.html" style="color: var(--secondary); font-weight: 600;">See our optimization tools →</a></p>
           <div class="tech-detail-grid">
             <div class="tech-detail-card"><div class="td-name"><i class="fab fa-docker"></i> Docker & Kubernetes</div><div class="td-desc">Containerised databases, operators (CloudNativePG, Crunchy, Percona) and Helm-based GitOps.</div></div>
             <div class="tech-detail-card"><div class="td-name"><i class="fas fa-cubes"></i> Terraform & Pulumi</div><div class="td-desc">Infrastructure-as-code for repeatable, auditable database and network provisioning.</div></div>
@@ -227,6 +271,7 @@
             <div class="tb-icon"><i class="fas fa-user-shield"></i></div>
             <h3>Security & Data Governance</h3>
           </div>
+          <span class="tech-category-tag">Compliance & Protection</span>
           <p class="tb-desc">Data is a liability before it's an asset. We make sure your platform is defensible.</p>
           <div class="tech-detail-grid">
             <div class="tech-detail-card"><div class="td-name"><i class="fas fa-key"></i> TDE & Column Encryption</div><div class="td-desc">Engine-native encryption-at-rest with externally managed keys (KMS, Vault, HSM).</div></div>
@@ -242,7 +287,7 @@
             <div class="tb-icon"><i class="fas fa-certificate"></i></div>
             <h3>Certifications We Hold</h3>
           </div>
-          <p class="tb-desc">Skills proven, not just claimed.</p>
+          <p class="tb-desc">Skills proven, not just claimed. Every engineer on our team holds at least one major certification.</p>
           <div>
             <span class="cert-badge"><i class="fas fa-check-circle"></i> Oracle Certified Master</span>
             <span class="cert-badge"><i class="fas fa-check-circle"></i> Oracle Certified Professional (19c)</span>
@@ -273,6 +318,21 @@
             <div class="tech-highlight"><i class="fas fa-check-circle"></i><span>Open-source & vendor-neutral approach</span></div>
             <div class="tech-highlight"><i class="fas fa-check-circle"></i><span>60+ dedicated database engineers</span></div>
             <div class="tech-highlight"><i class="fas fa-check-circle"></i><span>24/7 global support coverage</span></div>
+          </div>
+        </div>
+
+        <!-- Technology Services Links -->
+        <div class="tech-block" style="background: linear-gradient(135deg, #f8fafc, #e2e8f0);">
+          <div class="tech-block-header">
+            <div class="tb-icon" style="background: var(--gradient-accent);"><i class="fas fa-bolt"></i></div>
+            <h3>Ready to apply these technologies?</h3>
+          </div>
+          <p class="tb-desc">Explore how we use these technologies to deliver real business outcomes across our service offerings.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px;">
+            <a href="database-integration.html" class="cta-button" style="background: var(--gradient-cyan);">Database Integration <i class="fas fa-arrow-right"></i></a>
+            <a href="oracle-goldengate.html" class="cta-button" style="background: var(--gradient-accent);">GoldenGate Support <i class="fas fa-arrow-right"></i></a>
+            <a href="cloud-migration.html" class="cta-button" style="background: var(--gradient-cyan);">Cloud Migration <i class="fas fa-arrow-right"></i></a>
+            <a href="performance-optimization.html" class="cta-button" style="background: var(--gradient-accent);">Performance Optimization <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
 
