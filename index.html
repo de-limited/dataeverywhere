@@ -10,31 +10,32 @@
   <style>
     .trust-badge-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      margin-top: 30px;
     }
     .trust-badge {
       background: rgba(255,255,255,0.08);
       backdrop-filter: blur(10px);
-      border-radius: 16px;
-      padding: 24px 20px;
+      border-radius: 12px;
+      padding: 16px 14px;
       text-align: center;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.08);
     }
     .trust-badge i {
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: var(--accent-light);
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
     .trust-badge h4 {
       color: white;
-      font-size: 0.95rem;
-      margin-bottom: 4px;
+      font-size: 0.85rem;
+      margin-bottom: 2px;
+      font-weight: 600;
     }
     .trust-badge p {
-      color: rgba(255,255,255,0.6);
-      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.7rem;
     }
     .approach-grid {
       display: grid;
@@ -73,43 +74,37 @@
       font-size: 0.92rem;
       line-height: 1.6;
     }
-    /* Fix for floating stats - make them responsive and not overlapping */
+    /* Hero layout fix */
     .hero-wrapper {
-      position: relative;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 280px;
       gap: 40px;
+      align-items: start;
     }
     .hero-content-wrapper {
-      flex: 1 1 60%;
-      min-width: 300px;
+      min-width: 0;
     }
     .floating-stats-wrapper {
-      flex: 1 1 30%;
-      min-width: 200px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 14px;
+      padding-top: 10px;
     }
     .floating-stats-wrapper .stat-card {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 20px 30px;
+      border-radius: 14px;
+      padding: 14px 20px;
       text-align: center;
-      animation: floatStat 3s ease-in-out infinite;
-      border: 1px solid rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.3s ease;
     }
-    .floating-stats-wrapper .stat-card:nth-child(1) { animation-delay: 0s; }
-    .floating-stats-wrapper .stat-card:nth-child(2) { animation-delay: 1s; }
-    .floating-stats-wrapper .stat-card:nth-child(3) { animation-delay: 2s; }
-    @keyframes floatStat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    .floating-stats-wrapper .stat-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateX(4px);
     }
     .floating-stats-wrapper .stat-number {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       font-weight: 800;
       background: linear-gradient(135deg, #fbbf24, #ef4444);
       -webkit-background-clip: text;
@@ -117,24 +112,32 @@
       color: transparent;
     }
     .floating-stats-wrapper .stat-label {
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.8);
-      margin-top: 5px;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 2px;
     }
-    @media (max-width: 768px) {
+    /* Fix hero padding */
+    .hero {
+      padding: 140px 0 80px;
+    }
+    /* Responsive */
+    @media (max-width: 992px) {
       .hero-wrapper {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 30px;
       }
       .floating-stats-wrapper {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
       }
-      .floating-stats-wrapper .stat-card {
-        flex: 1 1 100px;
-        min-width: 120px;
-        padding: 16px 20px;
+    }
+    @media (max-width: 576px) {
+      .floating-stats-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .trust-badge-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
