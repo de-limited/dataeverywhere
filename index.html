@@ -22,11 +22,10 @@
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="technologies.html">Technologies</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <a href="contact.html" class="cta-button">Get Started</a>
+      <a href="contact.html" class="cta-button" data-testid="header-get-started-btn">Get Started</a>
       <button class="mobile-menu-btn" onclick="toggleMenu()">
         <i class="fas fa-bars"></i>
       </button>
@@ -40,8 +39,8 @@
           <h2>Seamless <span>Integration.</span><br />Limitless <span>Possibilities.</span></h2>
           <p>Experts in Oracle, SQL Server, PostgreSQL, and real-time data pipelines. Enterprise-grade database solutions tailored to your business needs.</p>
           <div class="hero-buttons">
-            <a href="services.html" class="cta-button">Explore Services <i class="fas fa-arrow-right"></i></a>
-            <a href="contact.html" class="secondary-button">Contact Us <i class="fas fa-headset"></i></a>
+            <a href="services.html" class="cta-button" data-testid="hero-explore-services-btn">Explore Services <i class="fas fa-arrow-right"></i></a>
+            <a href="contact.html" class="secondary-button" data-testid="hero-contact-btn">Contact Us <i class="fas fa-headset"></i></a>
           </div>
         </div>
       </div>
@@ -69,36 +68,36 @@
           <p>Comprehensive database solutions to power your enterprise infrastructure</p>
         </div>
         <div class="services-grid">
-          <div class="service-card">
+          <div class="service-card" data-testid="service-card-database-integration">
             <div class="service-icon"><i class="fas fa-database"></i></div>
             <div class="service-content">
               <h3>Database Integration</h3>
               <p>Seamless integration of Oracle, SQL Server, PostgreSQL, and MySQL across your enterprise ecosystem.</p>
-              <a href="services.html" class="secondary-button-dark">Learn More →</a>
+              <a href="database-integration.html" class="secondary-button-dark">Learn More →</a>
             </div>
           </div>
-          <div class="service-card">
+          <div class="service-card" data-testid="service-card-goldengate">
             <div class="service-icon"><i class="fas fa-sync-alt"></i></div>
             <div class="service-content">
               <h3>GoldenGate Support</h3>
               <p>Expert implementation and management of Oracle GoldenGate for real-time data replication.</p>
-              <a href="services.html" class="secondary-button-dark">Learn More →</a>
+              <a href="oracle-goldengate.html" class="secondary-button-dark">Learn More →</a>
             </div>
           </div>
-          <div class="service-card">
+          <div class="service-card" data-testid="service-card-cloud-migration">
             <div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
             <div class="service-content">
               <h3>Cloud Migration</h3>
               <p>Seamless migration to cloud platforms with zero downtime and maximum security.</p>
-              <a href="services.html" class="secondary-button-dark">Learn More →</a>
+              <a href="cloud-migration.html" class="secondary-button-dark">Learn More →</a>
             </div>
           </div>
-          <div class="service-card">
+          <div class="service-card" data-testid="service-card-performance">
             <div class="service-icon"><i class="fas fa-chart-line"></i></div>
             <div class="service-content">
               <h3>Performance Optimization</h3>
               <p>High-performance data architecture consulting to maximize database efficiency.</p>
-              <a href="services.html" class="secondary-button-dark">Learn More →</a>
+              <a href="performance-optimization.html" class="secondary-button-dark">Learn More →</a>
             </div>
           </div>
         </div>
@@ -109,7 +108,7 @@
       <div class="container">
         <h2>Ready to Transform Your Data Infrastructure?</h2>
         <p>Join 500+ enterprises that trust us with their most critical data systems</p>
-        <a href="contact.html" class="cta-button">Schedule a Consultation <i class="fas fa-calendar-alt"></i></a>
+        <a href="contact.html" class="cta-button" data-testid="cta-schedule-consultation-btn">Schedule a Consultation <i class="fas fa-calendar-alt"></i></a>
       </div>
     </section>
   </main>
@@ -130,10 +129,10 @@
         <div class="footer-column">
           <h3>Services</h3>
           <ul class="footer-links">
-            <li><a href="services.html">Database Integration</a></li>
-            <li><a href="services.html">Oracle GoldenGate</a></li>
-            <li><a href="services.html">Cloud Architecture</a></li>
-            <li><a href="services.html">Performance Optimization</a></li>
+            <li><a href="database-integration.html">Database Integration</a></li>
+            <li><a href="oracle-goldengate.html">Oracle GoldenGate</a></li>
+            <li><a href="cloud-migration.html">Cloud Architecture</a></li>
+            <li><a href="performance-optimization.html">Performance Optimization</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -142,7 +141,6 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="technologies.html">Technologies</a></li>
-            <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>

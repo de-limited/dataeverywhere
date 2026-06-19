@@ -8,107 +8,62 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* Additional styles for services page */
-    .service-detail {
-      background: white;
-      border-radius: 20px;
-      padding: 40px;
-      margin-bottom: 40px;
-      box-shadow: var(--shadow-md);
-      transition: var(--transition);
+    .service-overview-card {
+      background: var(--bg-card);
+      border-radius: 22px;
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(15,23,42,0.06);
+      transition: all 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
-    .service-detail:hover {
-      transform: translateY(-5px);
+    .service-overview-card:hover {
+      transform: translateY(-8px);
       box-shadow: var(--shadow-lg);
+      border-color: var(--secondary);
     }
-    .service-detail h3 {
-      font-size: 1.8rem;
+    .service-overview-card .so-icon {
+      width: 64px; height: 64px;
+      border-radius: 16px;
+      background: var(--gradient-cyan);
+      color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 22px;
+    }
+    .service-overview-card h3 {
+      font-size: 1.4rem;
       color: var(--primary);
-      margin-bottom: 20px;
+      margin-bottom: 14px;
+      font-weight: 700;
     }
-    .service-detail h3 i {
-      color: var(--secondary);
-      margin-right: 15px;
-    }
-    .service-detail p {
+    .service-overview-card p {
       color: var(--text-light);
-      line-height: 1.8;
+      line-height: 1.7;
       margin-bottom: 20px;
     }
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin: 25px 0;
+    .so-highlights {
+      list-style: none;
+      margin-bottom: 24px;
     }
-    .feature-list li {
+    .so-highlights li {
+      padding: 7px 0;
       display: flex;
       align-items: center;
       gap: 10px;
       color: var(--text-dark);
+      font-size: 0.93rem;
     }
-    .feature-list li i {
-      color: var(--success);
-      font-size: 1.2rem;
+    .so-highlights li i { color: var(--success); }
+    .so-cta {
+      margin-top: auto;
     }
-    .process-steps {
-      display: flex;
-      justify-content: space-between;
-      margin: 40px 0;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .step {
-      flex: 1;
-      text-align: center;
-      padding: 20px;
-      background: linear-gradient(135deg, var(--bg-light), white);
-      border-radius: 16px;
-    }
-    .step-number {
-      width: 50px;
-      height: 50px;
-      background: var(--gradient-cyan);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 15px;
-      font-weight: 800;
-      font-size: 1.3rem;
-      color: white;
-    }
-    .pricing-card {
-      background: white;
-      border-radius: 20px;
-      padding: 30px;
-      text-align: center;
-      transition: var(--transition);
-      border: 2px solid transparent;
-    }
-    .pricing-card:hover {
-      border-color: var(--secondary);
-      transform: translateY(-10px);
-    }
-    .pricing-card.featured {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      transform: scale(1.05);
-    }
-    .pricing-card.featured h3,
-    .pricing-card.featured .price,
-    .pricing-card.featured p {
-      color: white;
-    }
-    .price {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin: 20px 0;
-    }
-    .price span {
-      font-size: 1rem;
-      font-weight: 400;
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
     }
   </style>
 </head>
@@ -116,9 +71,7 @@
   <header>
     <div class="container header-container">
       <a href="index.html" class="logo">
-        <div class="logo-icon">
-          <i class="fas fa-database"></i>
-        </div>
+        <div class="logo-icon"><i class="fas fa-database"></i></div>
         <h1>Data<span>Everywhere</span></h1>
       </a>
       <nav>
@@ -126,155 +79,106 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html" class="active">Services</a></li>
           <li><a href="technologies.html">Technologies</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <a href="contact.html" class="cta-button">Get Started</a>
-      <button class="mobile-menu-btn" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-      </button>
+      <a href="contact.html" class="cta-button" data-testid="header-get-started-btn">Get Started</a>
+      <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
     </div>
   </header>
 
   <main>
-    <div class="container">
-      <div class="section">
-        <div class="section-title">
-          <h2>Our <span>Services</span></h2>
-          <div class="title-line"></div>
-          <p>Comprehensive database solutions to power your enterprise infrastructure</p>
+    <section class="subpage-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a><span>/</span> Services</div>
+        <h1>Engineered for <span>data that moves your business.</span></h1>
+        <p class="lead">From single-database tuning to multi-region replication, our four core service pillars deliver enterprise-grade outcomes for teams that can't afford downtime, data loss, or guesswork.</p>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><i class="fas fa-shield-alt"></i> ISO-aligned delivery</div>
+          <div class="hero-meta-item"><i class="fas fa-clock"></i> 24/7 SLA-backed support</div>
+          <div class="hero-meta-item"><i class="fas fa-globe"></i> Onsite & remote across regions</div>
         </div>
+      </div>
+    </section>
 
-        <!-- Service 1 -->
-        <div class="service-detail">
-          <h3><i class="fas fa-database"></i> Database Integration</h3>
-          <p>Seamlessly connect and integrate your enterprise database systems into a unified,高效 data ecosystem. Our experts specialize in integrating Oracle, SQL Server, PostgreSQL, MySQL, and MongoDB across cloud and on-premise environments.</p>
-          <ul class="feature-list">
-            <li><i class="fas fa-check-circle"></i> Cross-platform data synchronization</li>
-            <li><i class="fas fa-check-circle"></i> Real-time data replication</li>
-            <li><i class="fas fa-check-circle"></i> Legacy system modernization</li>
-            <li><i class="fas fa-check-circle"></i> API development & management</li>
-          </ul>
-          <a href="contact.html" class="cta-button">Get Started <i class="fas fa-arrow-right"></i></a>
-        </div>
+    <section class="sub-section">
+      <div class="container">
+        <h2 class="sub-heading">Choose your <span>specialism</span></h2>
+        <p class="sub-subheading">Each service has its own dedicated playbook, engagement model, and outcomes — click through to explore in depth.</p>
 
-        <!-- Service 2 -->
-        <div class="service-detail">
-          <h3><i class="fas fa-sync-alt"></i> Oracle GoldenGate Support</h3>
-          <p>Expert implementation, configuration, and management of Oracle GoldenGate for high-performance, real-time data replication and integration. Ensure data consistency across heterogeneous environments with zero downtime.</p>
-          <ul class="feature-list">
-            <li><i class="fas fa-check-circle"></i> Real-time data warehousing</li>
-            <li><i class="fas fa-check-circle"></i> Active-active database replication</li>
-            <li><i class="fas fa-check-circle"></i> Zero-downtime migrations</li>
-            <li><i class="fas fa-check-circle"></i> High availability solutions</li>
-          </ul>
-          <a href="contact.html" class="cta-button">Get Started <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Service 3 -->
-        <div class="service-detail">
-          <h3><i class="fas fa-cloud-upload-alt"></i> Cloud Architecture & Migration</h3>
-          <p>Design and deploy secure, scalable cloud and hybrid database solutions. We help you leverage AWS, Azure, and Google Cloud while maintaining peak performance and ironclad security.</p>
-          <ul class="feature-list">
-            <li><i class="fas fa-check-circle"></i> Cloud-native database design</li>
-            <li><i class="fas fa-check-circle"></i> Lift & shift migration</li>
-            <li><i class="fas fa-check-circle"></i> Multi-cloud strategy</li>
-            <li><i class="fas fa-check-circle"></i> Cost optimization</li>
-          </ul>
-          <a href="contact.html" class="cta-button">Get Started <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Service 4 -->
-        <div class="service-detail">
-          <h3><i class="fas fa-chart-line"></i> Performance Optimization</h3>
-          <p>Maximize your database efficiency with our performance tuning and optimization services. We identify bottlenecks, optimize queries, and implement solutions that can improve performance by up to 200%.</p>
-          <ul class="feature-list">
-            <li><i class="fas fa-check-circle"></i> Query optimization & tuning</li>
-            <li><i class="fas fa-check-circle"></i> Index strategy design</li>
-            <li><i class="fas fa-check-circle"></i> Hardware & configuration tuning</li>
-            <li><i class="fas fa-check-circle"></i> 24/7 performance monitoring</li>
-          </ul>
-          <a href="contact.html" class="cta-button">Get Started <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Our Process -->
-        <div class="section-title" style="margin-top: 80px">
-          <h2>Our <span>Process</span></h2>
-          <div class="title-line"></div>
-          <p>How we deliver excellence for our clients</p>
-        </div>
-
-        <div class="process-steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h4>Discovery</h4>
-            <p>We analyze your current infrastructure and business goals</p>
+        <div class="overview-grid">
+          <div class="service-overview-card" data-testid="overview-database-integration">
+            <div class="so-icon"><i class="fas fa-database"></i></div>
+            <h3>Database Integration</h3>
+            <p>Unify Oracle, SQL Server, PostgreSQL, MySQL and MongoDB into a single, governed data fabric — across cloud and on-prem.</p>
+            <ul class="so-highlights">
+              <li><i class="fas fa-check-circle"></i> Cross-platform synchronization</li>
+              <li><i class="fas fa-check-circle"></i> API & event-driven pipelines</li>
+              <li><i class="fas fa-check-circle"></i> Legacy modernization</li>
+            </ul>
+            <a href="database-integration.html" class="cta-button so-cta" data-testid="learn-more-database-integration">Explore service <i class="fas fa-arrow-right"></i></a>
           </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <h4>Strategy</h4>
-            <p>Custom solution design tailored to your needs</p>
+
+          <div class="service-overview-card" data-testid="overview-goldengate">
+            <div class="so-icon"><i class="fas fa-sync-alt"></i></div>
+            <h3>Oracle GoldenGate Support</h3>
+            <p>End-to-end GoldenGate engagements: design, deploy, monitor and rescue replication topologies that never stop running.</p>
+            <ul class="so-highlights">
+              <li><i class="fas fa-check-circle"></i> Real-time, zero-downtime replication</li>
+              <li><i class="fas fa-check-circle"></i> Heterogeneous source-target mapping</li>
+              <li><i class="fas fa-check-circle"></i> Lag analysis & break recovery</li>
+            </ul>
+            <a href="oracle-goldengate.html" class="cta-button so-cta" data-testid="learn-more-goldengate">Explore service <i class="fas fa-arrow-right"></i></a>
           </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <h4>Implementation</h4>
-            <p>Expert deployment with minimal disruption</p>
+
+          <div class="service-overview-card" data-testid="overview-cloud-migration">
+            <div class="so-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+            <h3>Cloud Architecture & Migration</h3>
+            <p>Migrate, modernize and architect database workloads on AWS, Azure, GCP and Oracle Cloud — securely, predictably, repeatably.</p>
+            <ul class="so-highlights">
+              <li><i class="fas fa-check-circle"></i> Lift & shift, re-platform, re-architect</li>
+              <li><i class="fas fa-check-circle"></i> Multi-cloud & hybrid topologies</li>
+              <li><i class="fas fa-check-circle"></i> Cost & licensing optimization</li>
+            </ul>
+            <a href="cloud-migration.html" class="cta-button so-cta" data-testid="learn-more-cloud-migration">Explore service <i class="fas fa-arrow-right"></i></a>
           </div>
-          <div class="step">
-            <div class="step-number">4</div>
-            <h4>Support</h4>
-            <p>Ongoing maintenance and 24/7 support</p>
+
+          <div class="service-overview-card" data-testid="overview-performance">
+            <div class="so-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>Performance Optimization</h3>
+            <p>Forensic tuning across SQL, indexes, storage, memory and concurrency — engineered for measurable, durable gains.</p>
+            <ul class="so-highlights">
+              <li><i class="fas fa-check-circle"></i> Query plan & index strategy</li>
+              <li><i class="fas fa-check-circle"></i> Wait-event & lock contention analysis</li>
+              <li><i class="fas fa-check-circle"></i> 24/7 monitoring & alerting</li>
+            </ul>
+            <a href="performance-optimization.html" class="cta-button so-cta" data-testid="learn-more-performance">Explore service <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Pricing Section -->
-<div class="section-title" style="margin-top: 80px">
-  <h2>Flexible <span>Pricing</span></h2>
-  <div class="title-line"></div>
-  <p>Choose the plan that fits your business needs</p>
-</div>
+    <section class="sub-section alt">
+      <div class="container">
+        <h2 class="sub-heading">Our <span>delivery process</span></h2>
+        <p class="sub-subheading">A predictable, transparent path from first call to long-term partnership.</p>
+        <div class="process-timeline">
+          <div class="timeline-step"><div class="ts-num">01</div><h4>Discovery</h4><p>Workshops, infrastructure audit and risk assessment to map current state.</p></div>
+          <div class="timeline-step"><div class="ts-num">02</div><h4>Strategy</h4><p>Tailored architecture and engagement plan with clear KPIs and milestones.</p></div>
+          <div class="timeline-step"><div class="ts-num">03</div><h4>Implementation</h4><p>Phased, low-risk delivery with daily standups and stakeholder visibility.</p></div>
+          <div class="timeline-step"><div class="ts-num">04</div><h4>Support</h4><p>Run-state operations, optimization and 24/7 SLA-backed engineering.</p></div>
+        </div>
+      </div>
+    </section>
 
-<div class="services-grid" style="margin-top: 40px">
-  <div class="pricing-card">
-    <h3>Starter</h3>
-    <div class="price">£499<span>/month</span></div>
-    <p>Perfect for small businesses</p>
-    <ul class="feature-list" style="margin-top: 20px; text-align: left;">
-      <li><i class="fas fa-check"></i> 24/7 Email Support</li>
-      <li><i class="fas fa-check"></i> Monthly Performance Reports</li>
-      <li><i class="fas fa-check"></i> Up to 2 Databases</li>
-      <li><i class="fas fa-check"></i> 8-Hour Response Time</li>
-    </ul>
-    <a href="contact.html" class="secondary-button-dark" style="margin-top: 20px; display: inline-block;">Choose Plan</a>
-  </div>
-  <div class="pricing-card featured">
-    <h3>Professional</h3>
-    <div class="price">£999<span>/month</span></div>
-    <p>Most popular for growing companies</p>
-    <ul class="feature-list" style="margin-top: 20px; text-align: left;">
-      <li><i class="fas fa-check"></i> 24/7 Priority Support</li>
-      <li><i class="fas fa-check"></i> Weekly Performance Reports</li>
-      <li><i class="fas fa-check"></i> Up to 10 Databases</li>
-      <li><i class="fas fa-check"></i> 2-Hour Response Time</li>
-      <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
-    </ul>
-    <a href="contact.html" class="cta-button" style="margin-top: 20px; display: inline-block;">Choose Plan</a>
-  </div>
-  <div class="pricing-card">
-    <h3>Enterprise</h3>
-    <div class="price">Custom</div>
-    <p>For large-scale operations</p>
-    <ul class="feature-list" style="margin-top: 20px; text-align: left;">
-      <li><i class="fas fa-check"></i> 24/7 Dedicated Support</li>
-      <li><i class="fas fa-check"></i> Real-time Monitoring</li>
-      <li><i class="fas fa-check"></i> Unlimited Databases</li>
-      <li><i class="fas fa-check"></i> 15-Minute Response Time</li>
-      <li><i class="fas fa-check"></i> On-site Engineering</li>
-    </ul>
-    <a href="contact.html" class="secondary-button-dark" style="margin-top: 20px; display: inline-block;">Contact Us</a>
-  </div>
-</div>
+    <section class="cta-section">
+      <div class="container">
+        <h2>Not sure which service fits?</h2>
+        <p>Book a 30-minute architecture call. We'll review your stack and recommend the best engagement path — no obligation.</p>
+        <a href="contact.html" class="cta-button" data-testid="services-cta-book-call">Book a Call <i class="fas fa-calendar-alt"></i></a>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="container">
@@ -292,10 +196,10 @@
         <div class="footer-column">
           <h3>Services</h3>
           <ul class="footer-links">
-            <li><a href="services.html">Database Integration</a></li>
-            <li><a href="services.html">Oracle GoldenGate</a></li>
-            <li><a href="services.html">Cloud Architecture</a></li>
-            <li><a href="services.html">Performance Optimization</a></li>
+            <li><a href="database-integration.html">Database Integration</a></li>
+            <li><a href="oracle-goldengate.html">Oracle GoldenGate</a></li>
+            <li><a href="cloud-migration.html">Cloud Architecture</a></li>
+            <li><a href="performance-optimization.html">Performance Optimization</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -304,7 +208,6 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="technologies.html">Technologies</a></li>
-            <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -312,7 +215,7 @@
           <h3>Contact Info</h3>
           <p><i class="fas fa-map-marker-alt"></i> 123 Data Street, Tech City</p>
           <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-         <p><i class="fas fa-envelope"></i> bigdataeverywhere@yahoo.com</p>
+          <p><i class="fas fa-envelope"></i> bigdataeverywhere@yahoo.com</p>
           <a href="contact.html" class="cta-button" style="margin-top: 15px; display: inline-block;">Get in Touch</a>
         </div>
       </div>

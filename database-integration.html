@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Database Integration | Data Everywhere Limited</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fas fa-database"></i></div>
+        <h1>Data<span>Everywhere</span></h1>
+      </a>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="technologies.html">Technologies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="cta-button">Get Started</a>
+      <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <main data-testid="page-database-integration">
+    <section class="subpage-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="services.html">Services</a><span>/</span> Database Integration</div>
+        <h1>Database <span>Integration</span></h1>
+        <p class="lead">Connect everything you store, everywhere it lives. We unify Oracle, SQL Server, PostgreSQL, MySQL and MongoDB into a governed data fabric that powers analytics, applications and AI — without rewriting your stack.</p>
+        <div class="hero-buttons">
+          <a href="contact.html" class="cta-button">Start an Integration <i class="fas fa-arrow-right"></i></a>
+          <a href="#features" class="secondary-button">See Capabilities <i class="fas fa-chevron-down"></i></a>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><i class="fas fa-bolt"></i> Real-time & batch</div>
+          <div class="hero-meta-item"><i class="fas fa-lock"></i> Zero-trust security</div>
+          <div class="hero-meta-item"><i class="fas fa-network-wired"></i> 50+ connectors</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section">
+      <div class="container">
+        <h2 class="sub-heading">Why integration <span>matters</span></h2>
+        <p class="sub-subheading">Most enterprises don't suffer from a lack of data — they suffer from fragmentation. Reports lie, AI models drift, and engineering teams spend more time stitching pipelines than building products. Our integration practice eliminates that tax.</p>
+        <div class="stat-row">
+          <div class="stat-block"><div class="num">85%</div><div class="lbl">avg. reduction in data silos</div></div>
+          <div class="stat-block"><div class="num">3.2x</div><div class="lbl">faster downstream analytics</div></div>
+          <div class="stat-block"><div class="num">0</div><div class="lbl">downtime on production cutovers</div></div>
+          <div class="stat-block"><div class="num">50+</div><div class="lbl">source & target systems</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section alt" id="features">
+      <div class="container">
+        <h2 class="sub-heading">Key <span>capabilities</span></h2>
+        <p class="sub-subheading">A full-stack integration practice covering ingest, transform, replicate and govern.</p>
+        <div class="feature-grid">
+          <div class="feature-tile"><div class="ft-icon"><i class="fas fa-exchange-alt"></i></div><h4>Cross-Platform Sync</h4><p>Bi-directional synchronization between heterogeneous engines with conflict detection and schema mapping.</p></div>
+          <div class="feature-tile"><div class="ft-icon"><i class="fas fa-stream"></i></div><h4>Real-Time CDC</h4><p>Log-based change data capture using GoldenGate, Debezium and native engine streams — sub-second latency.</p></div>
+          <div class="feature-tile"><div class="ft-icon"><i class="fas fa-server"></i></div><h4>Legacy Modernization</h4><p>Wrap mainframes, AS/400 and legacy schemas with modern APIs so they participate in your cloud architecture.</p></div>
+          <div class="feature-tile"><div class="ft-icon"><i class="fas fa-code"></i></div><h4>API Layer Design</h4><p>REST, GraphQL and gRPC façades over your data layer, designed for versioning, rate limits and observability.</p></div>
+          <div class="feature-tile"><div class="ft-icon"><i class="fas fa-shield-alt"></i></div><h4>Data Governance</h4><p>Lineage, masking, PII tagging and policy enforcement embedded directly into the pipeline.</p></div>
+          <div class="feature-tile"><div class="ft-icon"><i class="fas fa-vial"></i></div><h4>Test & Validation</h4><p>Automated row-level reconciliation, checksum validation and synthetic load testing before cutover.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section">
+      <div class="container">
+        <h2 class="sub-heading">Business <span>benefits</span></h2>
+        <p class="sub-subheading">Outcomes our integration engagements consistently deliver.</p>
+        <ul class="benefit-list">
+          <li><i class="fas fa-check-circle"></i><div><strong>Single source of truth</strong><span>One trustworthy version of customer, product and transaction data across every system.</span></div></li>
+          <li><i class="fas fa-check-circle"></i><div><strong>Faster releases</strong><span>App teams ship features without waiting on bespoke data plumbing for every new use case.</span></div></li>
+          <li><i class="fas fa-check-circle"></i><div><strong>AI/ML readiness</strong><span>Clean, lineage-tracked feature data feeds models — no more "garbage in, garbage out".</span></div></li>
+          <li><i class="fas fa-check-circle"></i><div><strong>Lower TCO</strong><span>Decommission redundant ETL tooling and consolidate licensing across the data estate.</span></div></li>
+          <li><i class="fas fa-check-circle"></i><div><strong>Audit confidence</strong><span>Provable lineage and policy enforcement for SOX, GDPR, HIPAA and PCI scope.</span></div></li>
+          <li><i class="fas fa-check-circle"></i><div><strong>Vendor independence</strong><span>Open standards-based design that prevents lock-in to any single cloud or engine.</span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="sub-section alt">
+      <div class="container">
+        <h2 class="sub-heading">Common <span>use cases</span></h2>
+        <p class="sub-subheading">Real-world scenarios where our integration team delivers outsized value.</p>
+        <div class="usecase-grid">
+          <div class="usecase-card"><h4>M&A Data Consolidation</h4><p>Merging two enterprises' Oracle and SQL Server estates into a unified schema with zero customer-facing disruption.</p></div>
+          <div class="usecase-card"><h4>Operational Data Store</h4><p>Streaming changes from OLTP systems into a normalized ODS that fuels real-time dashboards and APIs.</p></div>
+          <div class="usecase-card"><h4>SaaS ↔ On-Prem Sync</h4><p>Keeping Salesforce, Workday or NetSuite in lock-step with on-prem ERPs and warehouses.</p></div>
+          <div class="usecase-card"><h4>Lakehouse Hydration</h4><p>Continuous ingest into Snowflake, Databricks or BigQuery from heterogeneous OLTP sources.</p></div>
+          <div class="usecase-card"><h4>Microservice Decomposition</h4><p>Splitting monolithic schemas into bounded contexts using strangler-fig and CDC patterns.</p></div>
+          <div class="usecase-card"><h4>Regulatory Reporting</h4><p>Building auditable, repeatable pipelines for Basel, MiFID II and similar regulatory regimes.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section">
+      <div class="container">
+        <h2 class="sub-heading">Technologies <span>we use</span></h2>
+        <p class="sub-subheading">Best-of-breed tooling, applied with engineering rigour.</p>
+        <div class="tech-pill-row">
+          <span class="tech-pill"><i class="fas fa-database"></i> Oracle Database</span>
+          <span class="tech-pill"><i class="fas fa-server"></i> SQL Server</span>
+          <span class="tech-pill"><i class="fas fa-elephant"></i> PostgreSQL</span>
+          <span class="tech-pill"><i class="fas fa-hdd"></i> MySQL</span>
+          <span class="tech-pill"><i class="fas fa-leaf"></i> MongoDB</span>
+          <span class="tech-pill"><i class="fas fa-sync"></i> Oracle GoldenGate</span>
+          <span class="tech-pill"><i class="fas fa-code-branch"></i> Apache Kafka</span>
+          <span class="tech-pill"><i class="fas fa-water"></i> Debezium</span>
+          <span class="tech-pill"><i class="fas fa-pipe"></i> Airbyte</span>
+          <span class="tech-pill"><i class="fas fa-fire"></i> dbt</span>
+          <span class="tech-pill"><i class="fas fa-cogs"></i> Apache NiFi</span>
+          <span class="tech-pill"><i class="fas fa-cloud"></i> AWS DMS</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section alt">
+      <div class="container">
+        <h2 class="sub-heading">Our <span>delivery process</span></h2>
+        <p class="sub-subheading">Predictable phases with clear deliverables and exit criteria.</p>
+        <div class="process-timeline">
+          <div class="timeline-step"><div class="ts-num">01</div><h4>Source Audit</h4><p>Inventory every source, target, schema and SLA. Map data quality and ownership.</p></div>
+          <div class="timeline-step"><div class="ts-num">02</div><h4>Architecture</h4><p>Design the canonical model, transport, governance and observability stack.</p></div>
+          <div class="timeline-step"><div class="ts-num">03</div><h4>Build & Test</h4><p>Implement pipelines, reconcile rows, load-test, then run parallel cutover.</p></div>
+          <div class="timeline-step"><div class="ts-num">04</div><h4>Operate</h4><p>Hand over with runbooks, SLOs and 24/7 support — or we run it for you.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section">
+      <div class="container">
+        <h2 class="sub-heading">Frequently <span>asked questions</span></h2>
+        <div class="faq-list">
+          <details class="faq-item"><summary>How long does a typical integration project take?</summary><p>Most point-to-point integrations go live in 4–8 weeks. Enterprise-wide data fabric programs typically run as 3–6 month phased engagements with incremental value delivered every sprint.</p></details>
+          <details class="faq-item"><summary>Can you integrate without disrupting production?</summary><p>Yes. We use log-based CDC, blue/green deployments and parallel-run validation so source systems continue serving traffic throughout the cutover. Zero-downtime is our default operating mode.</p></details>
+          <details class="faq-item"><summary>Do you work with legacy mainframes?</summary><p>Absolutely. We have deep experience exposing IBM Db2 for z/OS, AS/400 and VSAM data through modern APIs and CDC streams without requiring application changes.</p></details>
+          <details class="faq-item"><summary>Will I be locked into a specific tool?</summary><p>No. We design with open standards (Kafka, Avro, JSON Schema, dbt) so your pipeline can evolve as your stack changes. We'll recommend the right tool for your context — not the one we get paid for.</p></details>
+          <details class="faq-item"><summary>How do you handle sensitive data (PII/PHI)?</summary><p>Masking, tokenisation and policy-based access control are built into the pipeline. We align with GDPR, HIPAA, PCI-DSS and SOC 2 requirements from day one.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to unify your data estate?</h2>
+        <p>Get a free architecture review and integration roadmap within 5 business days.</p>
+        <a href="contact.html" class="cta-button" data-testid="db-integration-cta">Request a Review <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Data Everywhere</h3>
+          <p>Enterprise-grade database integration and support services for businesses that demand reliability, security, and performance.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="database-integration.html">Database Integration</a></li>
+            <li><a href="oracle-goldengate.html">Oracle GoldenGate</a></li>
+            <li><a href="cloud-migration.html">Cloud Architecture</a></li>
+            <li><a href="performance-optimization.html">Performance Optimization</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="technologies.html">Technologies</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Data Street, Tech City</p>
+          <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+          <p><i class="fas fa-envelope"></i> bigdataeverywhere@yahoo.com</p>
+          <a href="contact.html" class="cta-button" style="margin-top: 15px; display: inline-block;">Get in Touch</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Data Everywhere Limited. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: #ff6b35;"></i> for enterprise excellence</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
