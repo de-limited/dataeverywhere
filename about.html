@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Data Everywhere Limited</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .about-header {
+      background: var(--gradient-hero);
+      color: white;
+      padding: 140px 0 80px;
+      text-align: center;
+      border-radius: 0 0 50px 50px;
+      margin-bottom: 80px;
+    }
+    .about-header h1 { font-size: 3.5rem; font-weight: 800; }
+    .about-header h1 span { color: var(--secondary); }
+    .about-header p { font-size: 1.2rem; max-width: 700px; margin: 20px auto 0; opacity: 0.9; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      margin: 40px 0;
+    }
+    .about-grid .highlight-box {
+      background: var(--gradient-cyan);
+      color: white;
+      padding: 40px;
+      border-radius: 24px;
+      text-align: center;
+    }
+    .about-grid .highlight-box i { font-size: 3.5rem; margin-bottom: 20px; }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
+    }
+    .value-card {
+      background: var(--bg-card);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      border-top: 4px solid var(--secondary);
+      transition: all 0.3s ease;
+    }
+    .value-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .value-card i { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; }
+    .value-card h4 { color: var(--primary); font-size: 1.2rem; margin-bottom: 10px; }
+    .value-card p { color: var(--text-light); font-size: 0.92rem; line-height: 1.6; }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .team-member {
+      background: var(--bg-card);
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    .team-member:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .team-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: var(--gradient-cyan);
+      margin: 0 auto 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: white;
+    }
+    .team-member h4 { color: var(--primary); font-size: 1.1rem; }
+    .team-member p { color: var(--text-light); font-size: 0.85rem; }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 30px; }
+      .about-header h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fas fa-database"></i></div>
+        <h1>Data<span>Everywhere</span></h1>
+      </a>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="technologies.html">Technologies</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="about.html">About</a></li> 
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="cta-button">Get Started</a>
+      <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-header">
+      <div class="container">
+        <h1>About <span>Data Everywhere</span></h1>
+        <p>We are a leading database consultancy dedicated to helping businesses optimise their data infrastructure for performance, security, and growth.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <section class="section">
+        <div class="section-title">
+          <h2>Our <span>Mission</span></h2>
+          <div class="title-line"></div>
+          <p>To empower enterprises with reliable, high-performance database solutions that drive business success.</p>
+        </div>
+
+        <div class="about-grid">
+          <div>
+            <h3 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 20px;">Who We Are</h3>
+            <p style="color: var(--text-light); line-height: 1.8;">Data Everywhere is a team of passionate database experts with decades of combined experience in Oracle, SQL Server, PostgreSQL, and cloud technologies. We pride ourselves on delivering unbiased, strategic advice and hands-on support to businesses of all sizes.</p>
+            <p style="color: var(--text-light); line-height: 1.8; margin-top: 20px;">Our consultants are certified professionals who stay at the forefront of database innovation to provide you with the best solutions for your unique challenges.</p>
+            <a href="contact.html" class="cta-button" style="margin-top: 25px;">Work With Us <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="highlight-box">
+            <i class="fas fa-database"></i>
+            <h3 style="font-size: 2.5rem;">10+ Years</h3>
+            <p style="font-size: 1.1rem; opacity: 0.9;">Of Excellence in Database Consultancy</p>
+          </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 80px;">
+          <h2>Our <span>Values</span></h2>
+          <div class="title-line"></div>
+        </div>
+        <div class="values-grid">
+          <div class="value-card"><i class="fas fa-handshake"></i><h4>Integrity</h4><p>We act with honesty and transparency in every engagement.</p></div>
+          <div class="value-card"><i class="fas fa-lightbulb"></i><h4>Innovation</h4><p>We embrace new technologies to solve complex problems.</p></div>
+          <div class="value-card"><i class="fas fa-users"></i><h4>Collaboration</h4><p>We work as a seamless extension of your team.</p></div>
+          <div class="value-card"><i class="fas fa-star"></i><h4>Excellence</h4><p>We deliver the highest quality service and results.</p></div>
+        </div>
+
+        <div class="section-title" style="margin-top: 80px;">
+          <h2>Meet Our <span>Team</span></h2>
+          <div class="title-line"></div>
+          <p>Experts you can trust with your most critical data systems</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-member"><div class="team-avatar"><i class="fas fa-user"></i></div><h4>Rebecca Adetunji</h4><p>Founder & Lead Consultant</p></div>
+          <div class="team-member"><div class="team-avatar"><i class="fas fa-user"></i></div><h4>James Smith</h4><p>Senior Database Architect</p></div>
+          <div class="team-member"><div class="team-avatar"><i class="fas fa-user"></i></div><h4>Maria Garcia</h4><p>Cloud Migration Specialist</p></div>
+          <div class="team-member"><div class="team-avatar"><i class="fas fa-user"></i></div><h4>David Chen</h4><p>GoldenGate Engineer</p></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Data Everywhere</h3>
+          <p>Enterprise-grade database integration and support services for businesses that demand reliability, security, and performance.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="database-integration.html">Database Integration</a></li>
+            <li><a href="oracle-goldengate.html">Oracle GoldenGate</a></li>
+            <li><a href="cloud-migration.html">Cloud Architecture</a></li>
+            <li><a href="performance-optimization.html">Performance Optimization</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="technologies.html">Technologies</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Data Street, Tech City</p>
+          <p><i class="fas fa-phone"></i> +44 (0) 1234 567890</p>
+          <p><i class="fas fa-envelope"></i> bigdataeverywhere@yahoo.com</p>
+          <a href="contact.html" class="cta-button" style="margin-top: 15px; display: inline-block;">Get in Touch</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Data Everywhere Limited. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: #ff6b35;"></i> for enterprise excellence</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

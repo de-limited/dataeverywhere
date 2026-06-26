@@ -74,7 +74,6 @@
       font-size: 0.92rem;
       line-height: 1.6;
     }
-    /* Hero layout fix */
     .hero-wrapper {
       display: grid;
       grid-template-columns: 1fr 280px;
@@ -98,6 +97,7 @@
       text-align: center;
       border: 1px solid rgba(255,255,255,0.08);
       transition: all 0.3s ease;
+      animation: none;
     }
     .floating-stats-wrapper .stat-card:hover {
       background: rgba(255, 255, 255, 0.15);
@@ -116,11 +116,12 @@
       color: rgba(255, 255, 255, 0.7);
       margin-top: 2px;
     }
-    /* Fix hero padding */
     .hero {
       padding: 140px 0 80px;
     }
-    /* Responsive */
+    .section.alt {
+      background: var(--bg-light);
+    }
     @media (max-width: 992px) {
       .hero-wrapper {
         grid-template-columns: 1fr;
@@ -146,9 +147,7 @@
   <header>
     <div class="container header-container">
       <a href="index.html" class="logo">
-        <div class="logo-icon">
-          <i class="fas fa-database"></i>
-        </div>
+        <div class="logo-icon"><i class="fas fa-database"></i></div>
         <h1>Data<span>Everywhere</span></h1>
       </a>
       <nav>
@@ -156,13 +155,12 @@
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="technologies.html">Technologies</a></li>
+          <li><a href="about.html">About</a></li> 
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <a href="contact.html" class="cta-button" data-testid="header-get-started-btn">Get Started</a>
-      <button class="mobile-menu-btn" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-      </button>
+      <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
     </div>
   </header>
 
@@ -388,7 +386,7 @@
         <div class="footer-column">
           <h3>Contact Info</h3>
           <p><i class="fas fa-map-marker-alt"></i> 123 Data Street, Tech City</p>
-          <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+          <p><i class="fas fa-phone"></i> +44 (0) 1234 567890</p>
           <p><i class="fas fa-envelope"></i> bigdataeverywhere@yahoo.com</p>
           <a href="contact.html" class="cta-button" style="margin-top: 15px; display: inline-block;">Get in Touch</a>
         </div>

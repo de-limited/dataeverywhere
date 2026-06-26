@@ -212,3 +212,26 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.opacity = '1';
   }, 100);
 });
+// Observe tech detail cards
+document.querySelectorAll('.tech-detail-card').forEach(card => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateX(-20px)';
+  card.style.transition = 'all 0.5s ease';
+  observer.observe(card);
+});
+
+// Observe timeline steps
+document.querySelectorAll('.timeline-step').forEach(step => {
+  step.style.opacity = '0';
+  step.style.transform = 'translateY(20px)';
+  step.style.transition = 'all 0.5s ease';
+  observer.observe(step);
+});
+
+// Observe usecase cards
+document.querySelectorAll('.usecase-card').forEach(card => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(20px)';
+  card.style.transition = 'all 0.5s ease';
+  observer.observe(card);
+});
